@@ -4,28 +4,60 @@ const cors = require('cors');
 app.use(cors());
 
 const port = process.env.port || 5555;
-const courseData =require('./Data/course.json')
-
-app.get('/', (req, res) => {
-  res.send(' Server Choltache')
-});
+const courseData = require('./Data/course.json')
+const dataOne =require('./Data/data01.json')
+const dataTwo =require('./Data/data02.json')
+const dataThree =require('./Data/data03.json')
+const dataFour =require('./Data/data04.json')
+const dataFive =require('./Data/data05.json')
+const dataSix =require('./Data/data06.json')
 
 app.get('/courses', (req, res) => {
   res.send(courseData);
 });
 
+app.get('/courses/1', (req, res) => {
+  res.send(dataOne);
+})
 
-// app.get('/course/:id', (req, res) => {
-  
-//   const id = req.params.id;
-//   const getItem = pcd?.find((display) => display.id == id);
-  
-//   if (!getItem) {
-//     res.send('sorry bhaia khuje pelam na')
-//   }
+app.get('/courses/2', (req, res) => {
+  res.send(dataTwo);
+})
 
-//   res.send(getItem);
-// });
+app.get('/courses/3', (req, res) => {
+  res.send(dataThree);
+})
+
+app.get('/courses/4', (req, res) => {
+  res.send(dataFour);
+})
+
+app.get('/courses/5', (req, res) => {
+  res.send(dataFive);
+})
+
+app.get('/courses/6', (req, res) => {
+  res.send(dataSix);
+})
+
+
+
+
+
+
+app.get('/courses/:id', (req, res) => {
+  
+  const id = req.params.id;
+  const getItem = courseData?.filter((display) => display.id == id);
+  
+  if (!getItem) {
+    res.send('sorry bhaia khuje pelam na')
+  }
+  else {
+    res.send(getItem);
+}
+  
+});
 
 app.listen(port, () => {
   console.log('server is runnig', port);
