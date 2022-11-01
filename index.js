@@ -41,7 +41,35 @@ app.get('/courses/6', (req, res) => {
 })
 
 
+app.get('/checkout/1', (req, res) => {
+  
+res.send(dataOne)
+  })
 
+app.get('/checkout/2', (req, res) => {
+  
+res.send(dataTwo)
+  })
+
+app.get('/checkout/3', (req, res) => {
+  
+res.send(dataThree)
+  })
+
+app.get('/checkout/4', (req, res) => {
+  
+res.send(dataFour)
+  })
+
+app.get('/checkout/5', (req, res) => {
+  
+res.send(dataFive)
+  })
+
+app.get('/checkout/6', (req, res) => {
+  
+res.send(dataSix)
+  })
 
 
 
